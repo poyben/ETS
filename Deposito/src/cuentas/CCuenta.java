@@ -1,74 +1,140 @@
 package cuentas;
 
+/**
+ * La clase CCuenta representa una cuenta bancaria.
+ */
 public class CCuenta {
-
 
     private String nombre;
     private String cuenta;
     private double saldo;
-    private double tipoInterés;
+    private double tipoInteres;
 
-    public CCuenta()
-    {
+    /**
+     * Constructor vacío de la clase CCuenta.
+     */
+    public CCuenta() {
     }
 
-    public CCuenta(String nom, String cue, double sal, double tipo)
-    {
+    /**
+     * Constructor de la clase CCuenta.
+     *
+     * @param nom   El nombre del titular de la cuenta.
+     * @param cue   El número de cuenta.
+     * @param sal   El saldo inicial de la cuenta.
+     * @param tipo  El tipo de interés de la cuenta.
+     */
+    public CCuenta(String nom, String cue, double sal, double tipo) {
         setNombre(nom);
         setCuenta(cue);
         setSaldo(sal);
     }
 
-    public double estado()
-    {
+    /**
+     * Obtiene el saldo actual de la cuenta.
+     *
+     * @return El saldo actual de la cuenta.
+     */
+    public double estado() {
         return getSaldo();
     }
 
-    public void ingresar(double cantidad) throws Exception
-    {
-        if (cantidad<0)
+    /**
+     * Realiza un ingreso en la cuenta.
+     *
+     * @param cantidad La cantidad a ingresar.
+     * @throws Exception Si la cantidad es negativa.
+     */
+    public void ingresar(double cantidad) throws Exception {
+        if (cantidad < 0)
             throw new Exception("No se puede ingresar una cantidad negativa");
         setSaldo(getSaldo() + cantidad);
     }
 
-    public void retirar(double cantidad) throws Exception
-    {
+    /**
+     * Realiza una retirada de dinero de la cuenta.
+     *
+     * @param cantidad La cantidad a retirar.
+     * @throws Exception Si la cantidad es negativa, o si no hay suficiente saldo.
+     */
+    public void retirar(double cantidad) throws Exception {
         if (cantidad <= 0)
-            throw new Exception ("No se puede retirar una cantidad negativa");
-        if (estado()< cantidad)
-            throw new Exception ("No se hay suficiente saldo");
+            throw new Exception("No se puede retirar una cantidad negativa");
+        if (estado() < cantidad)
+            throw new Exception("No hay suficiente saldo");
         setSaldo(getSaldo() - cantidad);
     }
 
-	String getNombre() {
-		return nombre;
-	}
+    /**
+     * Obtiene el nombre del titular de la cuenta.
+     *
+     * @return El nombre del titular de la cuenta.
+     */
+    String getNombre() {
+        return nombre;
+    }
 
-	void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    /**
+     * Establece el nombre del titular de la cuenta.
+     *
+     * @param nombre El nombre del titular de la cuenta.
+     */
+    void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	String getCuenta() {
-		return cuenta;
-	}
+    /**
+     * Obtiene el número de cuenta.
+     *
+     * @return El número de cuenta.
+     */
+    String getCuenta() {
+        return cuenta;
+    }
 
-	void setCuenta(String cuenta) {
-		this.cuenta = cuenta;
-	}
+    /**
+     * Establece el número de cuenta.
+     *
+     * @param cuenta El número de cuenta.
+     */
+    void setCuenta(String cuenta) {
+        this.cuenta = cuenta;
+    }
 
-	double getSaldo() {
-		return saldo;
-	}
+    /**
+     * Obtiene el saldo de la cuenta.
+     *
+     * @return El saldo de la cuenta.
+     */
+    double getSaldo() {
+        return saldo;
+    }
 
-	void setSaldo(double saldo) {
-		this.saldo = saldo;
-	}
+    /**
+     * Establece el saldo de la cuenta.
+     *
+     * @param saldo El saldo de la cuenta.
+     */
+    void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
 
-	double getTipoInterés() {
-		return tipoInterés;
+    /**
+     * Obtiene el tipo de interes de la cuenta.
+     *
+     * @return El tipo de interes de la cuenta.
+     */
+    double getTipoInteres() {
+        return tipoInteres;
 	}
-
-	void setTipoInterés(double tipoInterés) {
-		this.tipoInterés = tipoInterés;
-	}
+    
+    /**
+     * Establece el tipo de interes de la cuenta.
+     *
+     * @param tipoInteres El tipo de interes de la cuenta.
+     */
+    void setTipoInteres(double tipoInteres) {
+    	this.tipoInteres = tipoInteres;
+    }
+    
 }

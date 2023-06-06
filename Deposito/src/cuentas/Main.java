@@ -1,19 +1,50 @@
 package cuentas;
 
+/**
+ * 
+ * @author Ruben
+ * @version 1
+ * 
+ * 
+ * La clase Main es la clase principal que contiene el método main para ejecutar el programa.
+ */
+
 public class Main {
 
+	/**
+	 * 
+	 * La clase Cantidad representa una cantidad de valores flotantes.
+	 *
+	 */
+	
     public static class Cantidad {
 		public float[] args;
 
+		/**
+         * Constructor de la clase Cantidad.
+         * 
+         * @param args Un arreglo de valores flotantes.
+         */
+		
 		public Cantidad(float[] args) {
 			this.args = args;
 		}
 	}
 
+    /**
+     * El método main es el punto de entrada del programa.
+     * 
+     * @param parameterObject Un objeto Cantidad que contiene los parámetros necesarios.
+     */
+    
 	public static void main(Cantidad parameterObject) {
         operativa_cuenta();
     }
 
+	/**
+     * El método operativa_cuenta realiza operaciones en una cuenta bancaria.
+     */
+	
     private static void operativa_cuenta() {
         CCuenta cuenta1;
         double saldoActual;
