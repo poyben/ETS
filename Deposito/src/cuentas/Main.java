@@ -13,7 +13,7 @@ public class Main {
 
 	/**
 	 * 
-	 * La clase Cantidad representa una cantidad de valores flotantes.
+	 * La clase Cantidad representa una serie de valores de tipo float.
 	 *
 	 */
 	
@@ -34,7 +34,7 @@ public class Main {
     /**
      * El método main es el punto de entrada del programa.
      * 
-     * @param parameterObject Un objeto Cantidad que contiene los parámetros necesarios.
+     * @param El metodo recibe parameterObject, un objeto Cantidad que contiene los parámetros necesarios.
      */
     
 	public static void main(Cantidad parameterObject) {
@@ -43,6 +43,10 @@ public class Main {
 
 	/**
      * El método operativa_cuenta realiza operaciones en una cuenta bancaria.
+     * Primero se crea un objeto de tipo Cuenta. Se establece a la variable saldoActual el saldo de
+     * la cuenta creada.
+     * Se hacen dos try catch para manejar situaciones de ingreso de saldo o retiro de saldo controlando
+     * Que no se pueda retirar en caso de que la cantidad a retirar sea mayor que el saldo.
      */
 	
     private static void operativa_cuenta() {
